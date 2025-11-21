@@ -21,7 +21,7 @@
 
 1. Клонировать репозиторий:
    ```bash
-   git clone <ссылка на репозиторий>
+   git clone https://github.com/Markit125/team-finder
    cd team_finder_repo
    ```
 
@@ -53,10 +53,10 @@
 Проект полностью контейнеризирован. Для запуска вам понадобятся установленные Docker и Docker Compose.
 
 ### 1. Клонирование репозитория
-Склонируйте репозиторий на свой компьютер:
+Склонируйте репозиторий:
 
 ```bash
-git clone <ССЫЛКА_НА_ВАШ_РЕПОЗИТОРИЙ>
+git clone https://github.com/Markit125/team-finder
 cd team_finder_final
 ```
 
