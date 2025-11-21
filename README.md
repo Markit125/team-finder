@@ -66,21 +66,7 @@ cd team-finder
 
 ```bash
 cd infra
-touch .env
-```
-
-Откройте файл `.env` любым текстовым редактором и вставьте туда следующие настройки:
-
-```text
-DB_ENGINE=postgresql
-POSTGRES_DB=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
-SECRET_KEY='django-insecure-change-me-please'
-DEBUG=True
-ALLOWED_HOSTS=*
+mv .env_example .env
 ```
 
 ### 3. Запуск контейнеров
