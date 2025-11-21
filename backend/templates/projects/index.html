@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1>Поиск проектов</h1>
+        <p class="text-muted">Найди команду своей мечты</p>
+    </div>
+    <div class="col-md-4 text-end">
+        </div>
+</div>
+
+<div class="card mb-4 border-0 bg-light">
+    <div class="card-body py-2">
+        <span class="me-2 fw-bold text-muted">Фильтр по навыкам:</span>
+        
+        <a href="{% url 'index' %}" class="btn btn-sm rounded-pill {% if not active_skill %}btn-dark{% else %}btn-outline-secondary{% endif %} me-1">
+            Все
+        </a>
+
+        {% for skill in skills %}
+            <a href="{% url 'index' %}?skill={{ skill.name }}" 
+               class="btn btn-sm rounded-pill me-1 {% if active_skill == skill.name %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                {{ skill.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <span class="badge {% if project.status == 'active' %}bg-success{% else %}bg-secondary{% endif %} mb-2">
+                    {{ project.get_status_display }}
+                </span>
+                
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text text-muted small">Автор: {{ project.author.username }}</p>
+                <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                
+                <div class="mb-3">
+                    {% for skill in project.required_skills.all %}
+                        <span class="badge bg-info text-dark">{{ skill.name }}</span>
+                    {% empty %}
+                        <span class="text-muted small">Навыки не указаны</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="{% url 'projects:detail' project.pk %}" class="btn btn-outline-primary btn-sm w-100">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">Проектов пока нет. Вы можете создать первый в Админке!</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
