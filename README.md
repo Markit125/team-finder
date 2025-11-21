@@ -22,7 +22,7 @@
 1. Клонировать репозиторий:
    ```bash
    git clone https://github.com/Markit125/team-finder
-   cd team_finder_repo
+   cd team-finder
    ```
 
 2. Создать и активировать виртуальное окружение:
@@ -57,7 +57,7 @@
 
 ```bash
 git clone https://github.com/Markit125/team-finder
-cd team_finder_final
+cd team-finder
 ```
 
 ### 2. Создание файла переменных окружения (.env)
