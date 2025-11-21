@@ -97,9 +97,9 @@ docker compose exec web python manage.py createsuperuser
 
 ### 5. Готово
 
-Проект доступен по адресу: [http://localhost:8000](https://www.google.com/search?q=http://localhost:8000)
+Проект доступен по адресу: [http://localhost:8000](http://localhost:8000)
 
-  * **Админка:** [http://localhost:8000/admin/](https://www.google.com/search?q=http://localhost:8000/admin/)
+  * **Админка:** [http://localhost:8000/admin/](http://localhost:8000/admin/)
   * **Вход:** Используйте данные суперпользователя, созданного на шаге 4.
 
 -----
